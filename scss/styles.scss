@@ -1,0 +1,236 @@
+$azul: #333366;
+$gris: darkgrey;
+$blanco: #ffffff;
+$sombras: #001514;
+
+*{
+    box-sizing: border-box;
+    font-family: 'Abel', sans-serif;
+    padding: 0px;
+  }
+
+  section{
+      font-size: 1.5rem;
+      padding: 1em;
+      display: grid;
+      height: 100vh;
+      grid-template-rows: repeat(8, 12.5%);
+  }
+  .titulosSecciones{
+      grid-column-start: 1;
+      grid-row-start: 1;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 1.2em;
+      padding: 0;
+      margin: 0;
+  }
+/*-----MENU-----*/
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    nav
+    {
+	display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+        ul{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+            li{   
+            color: #0C0A3E;
+            font-size: 150%;
+            padding: 10px;
+                a{
+                text-decoration: none;
+                color: $azul;
+                    &:hover {
+                    background-color: darkgray;
+                    color: ghostwhite;
+                    padding: 4px;
+                    }
+            }
+        }
+}
+}
+}
+ /*----HOME---*/
+ #portada{
+    padding: 0;
+    background-image: url("../img/cool-background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+      .jumbotron{
+        margin: 40vh 0px 0px 20px;
+      }
+      h1{
+        background-color: $azul;
+        grid-row-start: 3;
+        color: $blanco;
+      }
+      p{
+        background-color: $azul;
+        color: $blanco;
+      }
+  }
+  .whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color: $blanco;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+}
+  
+  .whatsapp-icon {
+    margin-top:13px;
+}
+/*----SERVICIOS---*/
+.container {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  height: 80vh;
+      .servicios__box {
+      flex: 1;
+      overflow: hidden;
+      transition: .5s;
+      margin: 0 2%;
+      box-shadow: 0 20px 30px rgba(0,0,0,.1);
+      line-height: 0;
+          &:hover{
+          flex: 7;
+          height: 100%;
+      }
+      .servicios__foto{
+      width: 200%;
+      height: calc(100% - 15vh);
+      object-fit: cover; 
+      transition: .5s;
+      }
+      }
+      .servicios__titulo {
+      font-size: 1.5rem;
+      display: block;
+      text-align: center;
+      height: 10vh;
+      line-height: 1;
+      color: $azul;
+      background-color: $blanco;
+      margin-top: 20px;
+      }
+  }
+
+/*--------NOSOTROS-------*/
+#empresa{
+    background: linear-gradient(to bottom, #ffffff 0%,#9cbcd6 56%,#333366 100%);
+    color: $azul;
+    grid-column-start: 2;
+    grid-column-end: span 7;
+    grid-row-start: 2;
+    grid-row-end: span 6;
+}
+/*--------CLIENTES-------*/
+#clientes{
+    background: linear-gradient(to bottom, #333366 0%,#9cbcd6 56%,#ffffff 100%);
+}
+.clientes_logos{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: left;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    list-style-type: none;
+      &__imagenes{
+          display: grid;
+          padding: 1rem;
+      }
+  }
+/*--------PRESUPUESTOS-------*/
+#presupuestos{
+    color: $azul;
+    height: 90vh;
+
+      .presupuestos__botonesForm{
+          background-color: $azul;
+          border-radius: 10px;
+          color: $blanco;
+          padding: 10px;
+          font-size: 1.5rem;
+  
+      &:hover{
+          background-color: $gris;
+          color: $blanco;
+      }
+      }
+      input{
+          border-style: none;
+          border-bottom: 2px solid $gris;
+          background-color:$blanco;
+          margin-bottom: 10px;
+          font-size: 1.5rem;
+          width: 100% / 2;
+          color: $azul;
+      }
+      textarea{
+          border-style: none;
+          border-bottom: 2px solid $azul;
+          background-color: $blanco;
+          color: $azul;
+          font-weight: bold;
+          width: 50%;
+          font-size: 1rem;
+      }
+      option{
+          font-size: 1rem;
+      }
+  }
+/*--------FOOTER-------*/
+footer {
+        p{
+            font-size: 0.75em;
+            margin-left: 10px;
+            color: $azul;
+        }
+}
+  
+
+/*tablets*/
+@media screen and (min-width:768px){
+    .clientes_logos{
+        grid-template-columns: 1fr 1fr; 
+    }
+    section{
+        height: 100vh;
+    }
+}
+
+/*desktop*/
+@media screen and (min-width:1200px){
+    nav{
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    .clientes_logos{
+        grid-template-columns: 1fr 1fr; 
+    &_imagenes{
+        margin: 1rem;
+    }
+    }
+    section{
+        height: 100vh;
+    }
+    #presupuestos{
+        height: 75vh;
+    }
+}

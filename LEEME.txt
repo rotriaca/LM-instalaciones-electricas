@@ -1,0 +1,4 @@
+1. Agregué una descripción del sitio con una etiqueta <meta>
+2. Incluí keywords con una etiqueta <meta>
+3. El título ya lo tenía desde antes pero es representativo del contenido de la página
+4. La etiqueta <h1> es el rubro del producto de la página y modifiqué el <p> por un h2 para que sea más significativo
