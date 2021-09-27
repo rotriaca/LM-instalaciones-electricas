@@ -179,8 +179,8 @@ footer {
 }
   
 
-/*tablets*/
-@media screen and (min-width:768px){
+/*tablets*/ 
+@media screen and (min-width: 768px){
     .clientes_logos{
         grid-template-columns: 1fr 1fr; 
     }
@@ -190,7 +190,7 @@ footer {
 }
 
 /*desktop*/
-@media screen and (min-width:1200px){
+@media screen and (min-width: 900px){
    *{
        font-size: 1.2rem;
    }
@@ -203,6 +203,16 @@ footer {
             margin: 25px;
         }
     }
+    #portada{
+        padding: 0;
+        background-image: url("../img/cool-background.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    p{
+        font-size: 1.5rem;
+    }
+
     .container {
         display: flex;
         width: 100%;
@@ -219,13 +229,13 @@ footer {
                 &:hover{
                 flex: 7;
                 height: 100%;
+                }
             }
             .servicios__foto{
             width: 200%;
             height: calc(100% - 15vh);
             object-fit: cover; 
             transition: .5s;
-            }
             }
             .servicios__titulo {
             font-size: 1rem;
@@ -238,17 +248,17 @@ footer {
             margin-top: 20px;
             }
         }
-
     .clientes_logos{
-        grid-template-columns: 1fr 1fr; 
-    &_imagenes{
+        display: flex;
+        flex-wrap: wrap;
+        &_imagenes{
         margin: 1rem;
-    }
+        width: 400px;
+        height: 120px;
+        }
     }
     section{
         height: 100vh;
     }
-    #presupuestos{
-        height: 75vh;
-    }
+
 }

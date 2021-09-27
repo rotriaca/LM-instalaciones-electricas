@@ -187,7 +187,7 @@ footer p {
   }
 }
 /*desktop*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
   * {
     font-size: 1.2rem;
   }
@@ -200,6 +200,17 @@ footer p {
     width: 200px;
     justify-content: flex-start;
     margin: 25px;
+  }
+
+  #portada {
+    padding: 0;
+    background-image: url("../img/cool-background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  p {
+    font-size: 1.5rem;
   }
 
   .container {
@@ -221,7 +232,7 @@ footer p {
     flex: 7;
     height: 100%;
   }
-  .container .servicios__box .servicios__foto {
+  .container .servicios__foto {
     width: 200%;
     height: calc(100% - 15vh);
     object-fit: cover;
@@ -239,18 +250,17 @@ footer p {
   }
 
   .clientes_logos {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
   }
   .clientes_logos_imagenes {
     margin: 1rem;
+    width: 400px;
+    height: 120px;
   }
 
   section {
     height: 100vh;
-  }
-
-  #presupuestos {
-    height: 75vh;
   }
 }
 
