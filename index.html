@@ -20,15 +20,32 @@
         <div>
             <img class="header__logo" src="img/LM logo nuevo.svg" alt="LM instalaciones eléctricas" width="200" height="60">
         </div>
-        <nav>
-            <ul class="header__links">
-                <li><a href="#portada">Home</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#empresa">Nosotros</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#presupuestos">Presupuestos</a></li>
-            </ul>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#portada">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#empresa">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#clientes">Clientes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#presupuesto">Presupuestos</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
     <a href="https://wa.me/5491163643489?text=Necesito%20un%20presupuesto" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
     <section id= "portada">
@@ -36,10 +53,12 @@
             <h1 class="display-4">INSTALACIONES ELECTRICAS</h1>
             <hr class="my-4">
             <h2>Soluciones integrales</h2>
+            <p>Proyecto, dirección y ejecución de obras</p>
+            <p>Reparaciones y refacciones en el ámbito industrial, comercial y domiciliario</p>
             </div>
       </section>
       <section id="servicios">
-        <h2 class="titulosSecciones">Servicios</h2>
+        <div class="titulosSecciones">Servicios</div>
           <div class="container">
               <div class="servicios__box">
               <img class="servicios__foto" src="img/electricidad_comercial.jpg">
@@ -64,16 +83,14 @@
           </div>
     </section>
     <section id="empresa">
-        <h2 class="titulosSecciones">Nosotros</h2>
+        <div class="titulosSecciones">Nosotros</div>
         <p>Somos una empresa de servicios con mas de 20 años de experiencia resolviendo con precisión y eficiencia todo lo necesario en el campo de instalaciones eléctricas industriales, comerciales, de obra y domiciliarias.
             Ofrecemos asesoramiento profesional tanto en instalaciones como en trámites en todo el ámbito eléctrico. Adaptamos nuestro servicio a le necesidad del cliente trabajando siempre dentro del marco de responsabilidad necesaria para cuidar al máximo la seguridad del servicio  eléctrico
             Tenemos un plantel altamente capacitado y de  actualizado conocimiento para cada área de nuestros servicios.
             Nuestro objetivo básico es  la satisfacción del cliente a través de un trabajo bien realizado ateniéndonos a todas las normas vigentes y cuidando el criterio estético </p> 
     </section>
     <section id="clientes">
-        <div>
-          <h2 class="titulosSecciones">Confían en nosotros</h2>
-        </div>
+          <div class="titulosSecciones">Confían en nosotros</div>
         <div class="clientes">
           <ul class="clientes_logos">
               <li><img class="clientes_logos_imagenes" src="img/asoprofarma.png" alt="Asoprofarma"></li>
@@ -88,7 +105,7 @@
     <section id="presupuestos">
             <form action="" method="POST" enctype="application/x-www-form-urlencoded">
                 <div>
-                    <h2 class="titulosSecciones">Presupuestos</h2>
+                    <div class="titulosSecciones">Presupuestos</div>
                     <div>
                         <input type="text" name="name" placeholder="Nombre*" required>
                     </div>
@@ -125,7 +142,7 @@
   </main>
   <footer>
     <div>
-        <img class="margenLogo" src="img/LM logo nuevo.svg" alt="LM instalaciones eléctricas" width="200" height="100">
+        <img class="margenLogo" src="img/LM logo nuevo.svg" alt="LM instalaciones eléctricas">
     </div>
     <div>
         <p>Telefono: 15 12345678</p>

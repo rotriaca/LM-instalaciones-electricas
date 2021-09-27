@@ -1,23 +1,21 @@
 * {
   box-sizing: border-box;
   font-family: "Abel", sans-serif;
+  font-size: 1rem;
   padding: 0px;
 }
 
 section {
-  font-size: 1.5rem;
   padding: 1em;
   display: grid;
   height: 100vh;
-  grid-template-rows: repeat(8, 12.5%);
 }
 
 .titulosSecciones {
-  grid-column-start: 1;
-  grid-row-start: 1;
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: 1.2em;
+  font-size: 1.8rem;
+  height: 50px;
   padding: 0;
   margin: 0;
 }
@@ -25,33 +23,10 @@ section {
 /*-----MENU-----*/
 header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-header nav {
-  display: flex;
-  width: 50%;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-header nav ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-}
-header nav ul li {
-  color: #0C0A3E;
-  font-size: 150%;
-  padding: 10px;
-}
-header nav ul li a {
-  text-decoration: none;
-  color: #333366;
-}
-header nav ul li a:hover {
-  background-color: darkgray;
-  color: ghostwhite;
-  padding: 4px;
+header .header__logo {
+  width: 100px;
 }
 
 /*----HOME---*/
@@ -59,15 +34,21 @@ header nav ul li a:hover {
   padding: 0;
   background-image: url("../img/cool-background.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 500px;
+  background-position: right top;
 }
 #portada .jumbotron {
-  margin: 40vh 0px 0px 20px;
+  margin: 10vh 0px 0px 20px;
 }
 #portada h1 {
   background-color: #333366;
   grid-row-start: 3;
   color: #ffffff;
+}
+#portada h2 {
+  background-color: darkgrey;
+  color: #333366;
+  margin-bottom: 30px;
 }
 #portada p {
   background-color: #333366;
@@ -93,50 +74,38 @@ header nav ul li a:hover {
 }
 
 /*----SERVICIOS---*/
-.container {
+#servicios {
+  grid-template-rows: 10% 90%;
+}
+#servicios .container {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+#servicios .container .servicios__box {
   display: flex;
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  height: 80vh;
+  flex-direction: column;
 }
-.container .servicios__box {
-  flex: 1;
-  overflow: hidden;
-  transition: 0.5s;
-  margin: 0 2%;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-  line-height: 0;
+#servicios .container .servicios__box .servicios__foto {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
 }
-.container .servicios__box:hover {
-  flex: 7;
-  height: 100%;
-}
-.container .servicios__box .servicios__foto {
-  width: 200%;
-  height: calc(100% - 15vh);
-  object-fit: cover;
-  transition: 0.5s;
-}
-.container .servicios__titulo {
-  font-size: 1.5rem;
-  display: block;
+#servicios .container .servicios__box .servicios__titulo {
+  margin-right: 10px;
+  background-color: #333366;
+  color: #ffffff;
   text-align: center;
-  height: 10vh;
-  line-height: 1;
-  color: #333366;
-  background-color: #ffffff;
-  margin-top: 20px;
 }
 
 /*--------NOSOTROS-------*/
 #empresa {
   background: linear-gradient(to bottom, #ffffff 0%, #9cbcd6 56%, #333366 100%);
   color: #333366;
-  grid-column-start: 2;
-  grid-column-end: span 7;
-  grid-row-start: 2;
-  grid-row-end: span 6;
+}
+#empresa p {
+  font-size: 1.3rem;
 }
 
 /*--------CLIENTES-------*/
@@ -145,17 +114,12 @@ header nav ul li a:hover {
 }
 
 .clientes_logos {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  justify-content: left;
-  grid-column-start: 1;
-  grid-row-start: 2;
+  grid-template-rows: repeat(8, 50px);
   list-style-type: none;
 }
-.clientes_logos__imagenes {
-  display: grid;
-  padding: 1rem;
+.clientes_logos_imagenes {
+  padding: 15px 20px;
+  width: 300px;
 }
 
 /*--------PRESUPUESTOS-------*/
@@ -197,6 +161,15 @@ header nav ul li a:hover {
 }
 
 /*--------FOOTER-------*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+}
+footer .margenLogo {
+  width: 150px;
+  height: 60;
+}
 footer p {
   font-size: 0.75em;
   margin-left: 10px;
@@ -215,9 +188,54 @@ footer p {
 }
 /*desktop*/
 @media screen and (min-width: 1200px) {
-  nav {
-    justify-content: flex-end;
-    flex-wrap: nowrap;
+  * {
+    font-size: 1.2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .header__logo {
+    width: 200px;
+    justify-content: flex-start;
+    margin: 25px;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    height: 80vh;
+  }
+  .container .servicios__box {
+    flex: 1;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 0 2%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    line-height: 0;
+  }
+  .container .servicios__box:hover {
+    flex: 7;
+    height: 100%;
+  }
+  .container .servicios__box .servicios__foto {
+    width: 200%;
+    height: calc(100% - 15vh);
+    object-fit: cover;
+    transition: 0.5s;
+  }
+  .container .servicios__titulo {
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    height: 10vh;
+    line-height: 1;
+    color: #333366;
+    background-color: #ffffff;
+    margin-top: 20px;
   }
 
   .clientes_logos {

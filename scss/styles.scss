@@ -2,74 +2,56 @@ $azul: #333366;
 $gris: darkgrey;
 $blanco: #ffffff;
 $sombras: #001514;
+$nav-height: 60px;
 
 *{
     box-sizing: border-box;
     font-family: 'Abel', sans-serif;
+    font-size: 1rem;
     padding: 0px;
   }
 
   section{
-      font-size: 1.5rem;
       padding: 1em;
       display: grid;
       height: 100vh;
-      grid-template-rows: repeat(8, 12.5%);
   }
   .titulosSecciones{
-      grid-column-start: 1;
-      grid-row-start: 1;
       font-weight: bold;
       letter-spacing: 2px;
-      font-size: 1.2em;
+      font-size: 1.8rem;
+      height: 50px;
       padding: 0;
       margin: 0;
   }
 /*-----MENU-----*/
-header{
+  header{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    nav
-    {
-	display: flex;
-    width: 50%;
-    justify-content: flex-start;
-    flex-wrap: wrap; 
-        ul{
-        list-style-type: none;
-        display: flex;
-        align-items: center;
-            li{   
-            color: #0C0A3E;
-            font-size: 150%;
-            padding: 10px;
-                a{
-                text-decoration: none;
-                color: $azul;
-                    &:hover {
-                    background-color: darkgray;
-                    color: ghostwhite;
-                    padding: 4px;
-                    }
-            }
-        }
-}
-}
-}
+    justify-content: space-around;
+    .header__logo{
+      width: 100px;
+    }
+  }
+  
  /*----HOME---*/
  #portada{
     padding: 0;
     background-image: url("../img/cool-background.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 500px;
+    background-position: right top;
       .jumbotron{
-        margin: 40vh 0px 0px 20px;
+        margin: 10vh 0px 0px 20px;
       }
       h1{
         background-color: $azul;
         grid-row-start: 3;
         color: $blanco;
+      }
+      h2{
+          background-color: $gris;
+          color: $azul;
+          margin-bottom: 30px;
       }
       p{
         background-color: $azul;
@@ -94,66 +76,51 @@ header{
     margin-top:13px;
 }
 /*----SERVICIOS---*/
-.container {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  height: 80vh;
-      .servicios__box {
-      flex: 1;
-      overflow: hidden;
-      transition: .5s;
-      margin: 0 2%;
-      box-shadow: 0 20px 30px rgba(0,0,0,.1);
-      line-height: 0;
-          &:hover{
-          flex: 7;
-          height: 100%;
-      }
-      .servicios__foto{
-      width: 200%;
-      height: calc(100% - 15vh);
-      object-fit: cover; 
-      transition: .5s;
-      }
-      }
-      .servicios__titulo {
-      font-size: 1.5rem;
-      display: block;
-      text-align: center;
-      height: 10vh;
-      line-height: 1;
-      color: $azul;
-      background-color: $blanco;
-      margin-top: 20px;
-      }
-  }
+    #servicios{
+        grid-template-rows: 10% 90%;
+    .container{
+        display: grid;
+        width: 100vw;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr 1fr;
+        .servicios__box{
+            display: flex;
+            flex-direction: column;
+            .servicios__foto{
+                width: 150px;
+                height: 150px;
+                margin: 10px;
+            }
+            .servicios__titulo{
+                margin-right: 10px;
+                background-color: $azul;
+                color: $blanco;
+                text-align: center;
+            }
+        }
+        }
+    }
 
 /*--------NOSOTROS-------*/
 #empresa{
     background: linear-gradient(to bottom, #ffffff 0%,#9cbcd6 56%,#333366 100%);
     color: $azul;
-    grid-column-start: 2;
-    grid-column-end: span 7;
-    grid-row-start: 2;
-    grid-row-end: span 6;
+    p{
+        font-size: 1.3rem;
+    }
 }
+
 /*--------CLIENTES-------*/
 #clientes{
     background: linear-gradient(to bottom, #333366 0%,#9cbcd6 56%,#ffffff 100%);
 }
 .clientes_logos{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    justify-content: left;
-    grid-column-start: 1;
-    grid-row-start: 2;
+    grid-template-rows: repeat(8, 50px);
     list-style-type: none;
-      &__imagenes{
-          display: grid;
-          padding: 1rem;
+      &_imagenes{
+          
+          padding: 15px 20px;
+          width: 300px;
       }
   }
 /*--------PRESUPUESTOS-------*/
@@ -197,6 +164,13 @@ header{
   }
 /*--------FOOTER-------*/
 footer {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px;
+        .margenLogo{
+            width: 150px;
+            height: 60;
+        }
         p{
             font-size: 0.75em;
             margin-left: 10px;
@@ -217,10 +191,54 @@ footer {
 
 /*desktop*/
 @media screen and (min-width:1200px){
-    nav{
-        justify-content: flex-end;
-        flex-wrap: nowrap;
+   *{
+       font-size: 1.2rem;
+   }
+    header{
+        display: flex;
+        justify-content: space-between;
+        .header__logo{
+            width: 200px;
+            justify-content: flex-start;
+            margin: 25px;
+        }
     }
+    .container {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        height: 80vh;
+            .servicios__box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 2%;
+            box-shadow: 0 20px 30px rgba(0,0,0,.1);
+            line-height: 0;
+                &:hover{
+                flex: 7;
+                height: 100%;
+            }
+            .servicios__foto{
+            width: 200%;
+            height: calc(100% - 15vh);
+            object-fit: cover; 
+            transition: .5s;
+            }
+            }
+            .servicios__titulo {
+            font-size: 1rem;
+            display: block;
+            text-align: center;
+            height: 10vh;
+            line-height: 1;
+            color: $azul;
+            background-color: $blanco;
+            margin-top: 20px;
+            }
+        }
+
     .clientes_logos{
         grid-template-columns: 1fr 1fr; 
     &_imagenes{
